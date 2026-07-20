@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precision Length Converter | Home Design Co.</title>
-    <!-- นำเข้าฟอนต์จาก Google Fonts เพื่อความสวยงามและทันสมัย -->
+    <title>Precision Length Converter with Visual Chart | Home Design Co.</title>
+    <!-- นำเข้าฟอนต์ Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- เชื่อมโยงไฟล์ CSS ภายนอก -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ส่วนหัวของเว็บไซต์ (Header) -->
+    <!-- Header Section -->
     <header>
         <div class="header-container">
             <div class="brand-wrapper">
@@ -21,10 +21,10 @@
         </div>
     </header>
 
-    <!-- ส่วนเนื้อหาหลัก (Main Content) -->
+    <!-- Main Content Section -->
     <main>
         <div class="converter-card">
-            <h2 class="card-title">เครื่องมือแปลงหน่วยความยาว</h2>
+            <h2 class="card-title">เครื่องมือแปลงหน่วยพร้อมกราฟเปรียบเทียบ</h2>
 
             <!-- ช่องกรอกข้อมูลตัวเลข -->
             <div class="form-group">
@@ -32,7 +32,7 @@
                 <input type="number" id="inputValue" value="10" placeholder="ระบุตัวเลข..." inputmode="decimal">
             </div>
 
-            <!-- โซนเลือกหน่วยวัด (จัดรูปแบบ Responsive) -->
+            <!-- โซนเลือกหน่วยวัด (Responsive Flexbox) -->
             <div class="unit-selection-container">
                 <!-- หน่วยต้นทาง -->
                 <div class="form-group select-wrapper">
@@ -53,7 +53,7 @@
                     </select>
                 </div>
 
-                <!-- ปุ่มสลับหน่วย (Swap Button) เพิ่มความสะดวกในการใช้งาน -->
+                <!-- ปุ่มสลับหน่วย -->
                 <div class="swap-button-container">
                     <button id="swapBtn" type="button" title="สลับหน่วย">🔄</button>
                 </div>
@@ -78,19 +78,31 @@
                 </div>
             </div>
 
-            <!-- กล่องแสดงผลลัพธ์ (Result Box) -->
+            <!-- กล่องแสดงผลลัพธ์ -->
             <div class="result-box">
                 <div class="result-title">ผลลัพธ์การแปลง</div>
                 <div class="result-value" id="resultDisplay">0.3281 ฟุต (ft)</div>
             </div>
+
+            <!-- ส่วนแสดงผลกราฟ (Chart Section) -->
+            <div class="chart-container">
+                <h3 class="chart-title">แผนภูมิเปรียบเทียบสัดส่วนในหน่วยต่างๆ</h3>
+                <canvas id="comparisonChart"></canvas>
+            </div>
         </div>
     </main>
 
-    <!-- ส่วนท้ายของเว็บไซต์ (Footer) -->
+    <!-- Footer Section -->
     <footer>
         <p>Copyright © 2026 <strong>Home Design Co.</strong> | Professional Engineering Tools.</p>
     </footer>
 
+    <!-- เรียกใช้ Chart.js Library ผ่าน CDN ก่อน script.js ของเรา -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- เชื่อมโยงไฟล์ JavaScript ของเรา -->
+    <script src="script.js"></script>
+</body>
+</html>
     <!-- เชื่อมโยงไฟล์ JavaScript ภายนอกไว้ด้านล่างสุด เพื่อให้โหลดหน้าเว็บได้เร็วขึ้น -->
     <script src="script.js"></script>
 </body>
