@@ -1,10 +1,10 @@
 /* ==========================================================================
-   1. VARIABLES & BASE STYLES (กำหนดตัวแปรสีและฟอนต์)
+   1. VARIABLES & BASE STYLES
    ========================================================================== */
 :root {
-    --primary-color: #0b0f01;      /* สีน้ำเงินอมเขียวเข้ม (Deep Teal) ดูภูมิฐาน */
-    --secondary-color: #ebd8b6;    /* สีเหลืองทอง (Amber/Gold) สำหรับเน้นจุดสำคัญ */
-    --bg-gradient-start: #f6f8f0;  /* สีพื้นหลังไล่เฉด */
+    --primary-color: #115e59;      /* Deep Teal */
+    --secondary-color: #f59e0b;    /* Gold/Amber */
+    --bg-gradient-start: #f0f4f8;  
     --bg-gradient-end: #dbeafe;
     --card-bg: #ffffff;
     --text-main: #1f2937;
@@ -13,7 +13,6 @@
     --border-radius-lg: 16px;
     --border-radius-sm: 8px;
     
-    /* การจับคู่ฟอนต์ให้ดูโมเดิร์นและสะอาดตา */
     --font-header: 'Poiret One', cursive;
     --font-body: 'Prompt', sans-serif;
 }
@@ -35,7 +34,7 @@ body {
 }
 
 /* ==========================================================================
-   2. HEADER STYLES (ส่วนหัว)
+   2. HEADER STYLES
    ========================================================================== */
 header {
     background-color: var(--card-bg);
@@ -74,7 +73,7 @@ header h1 {
 }
 
 /* ==========================================================================
-   3. MAIN & CARD STYLES (ส่วนเนื้อหาและการ์ดคำนวณ)
+   3. MAIN & CARD STYLES
    ========================================================================== */
 main {
     flex: 1;
@@ -134,7 +133,6 @@ input:focus, select:focus {
     box-shadow: 0 0 0 3px rgba(17, 94, 89, 0.1);
 }
 
-/* การจัดเลย์เอาต์ส่วนเลือกหน่วยวัด */
 .unit-selection-container {
     display: flex;
     align-items: flex-end;
@@ -143,14 +141,13 @@ input:focus, select:focus {
 
 .select-wrapper {
     flex: 1;
-    margin-bottom: 0; /* รีเซ็ต margin สำหรับ Flexbox */
+    margin-bottom: 0;
 }
 
-/* ปุ่มสลับหน่วย (Swap Button) */
 .swap-button-container {
     display: flex;
     justify-content: center;
-    padding-bottom: 4px; /* ดันปุ่มขึ้นมาให้กึ่งกลางแนวเดียวกับ Select Box */
+    padding-bottom: 4px;
 }
 
 #swapBtn {
@@ -170,12 +167,12 @@ input:focus, select:focus {
 #swapBtn:hover {
     background-color: var(--primary-color);
     color: white;
-    transform: rotate(180deg); /* หมุนเท่ๆ ตอนเอาเมาส์ไปวาง */
+    transform: rotate(180deg);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 /* ==========================================================================
-   4. RESULT BOX STYLES (กล่องแสดงผลลัพธ์)
+   4. RESULT BOX STYLES
    ========================================================================== */
 .result-box {
     background: linear-gradient(135deg, var(--primary-color) 0%, #0d9488 100%);
@@ -217,7 +214,24 @@ input:focus, select:focus {
 }
 
 /* ==========================================================================
-   5. FOOTER STYLES (ส่วนท้าย)
+   5. CHART STYLES (ส่วนปรับปรุงใหม่สำหรับแสดงผลกราฟ)
+   ========================================================================== */
+.chart-container {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px dashed var(--border-color);
+}
+
+.chart-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   6. FOOTER STYLES
    ========================================================================== */
 footer {
     background-color: #111827;
@@ -233,7 +247,7 @@ footer strong {
 }
 
 /* ==========================================================================
-   6. RESPONSIVE DESIGN (รองรับมือถือและแท็บเล็ต)
+   7. RESPONSIVE DESIGN
    ========================================================================== */
 @media (max-width: 650px) {
     header {
@@ -249,7 +263,6 @@ footer strong {
         font-size: 1.6rem;
         margin-bottom: 2rem;
     }
-    /* ปรับปุ่มเลือกหน่วยให้เรียงลงมาเป็นแนวตั้งบนมือถือ */
     .unit-selection-container {
         flex-direction: column;
         align-items: stretch;
@@ -265,7 +278,7 @@ footer strong {
         height: 40px;
     }
     #swapBtn:hover {
-        transform: none; /* ปิดเอฟเฟกต์หมุนบนมือถือเพื่อไม่ให้เลย์เอาต์เพี้ยน */
+        transform: none;
     }
     .result-value {
         font-size: 1.75rem;
